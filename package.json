@@ -1,6 +1,6 @@
 {
   "name": "thens",
-  "version": "1.0.0-beta",
+  "version": "1.0.0",
   "description": "The instrument to create async functions sequence with single argument, powered by Promise",
   "main": "lib/index.js",
   "scripts": {
@@ -13,8 +13,15 @@
     "url": "git+https://github.com/morulus/flowable.git"
   },
   "keywords": [
+    "then",
+    "sequence",
+    "chain",
     "flow",
-    "props"
+    "props",
+    "promise",
+    "compose",
+    "generator",
+    "runner"
   ],
   "author": "Vladimir Kalmykov <vladimirmorulus@gmail.com>",
   "license": "MIT",
@@ -33,6 +40,7 @@
     "jest": "^21.2.1"
   },
   "dependencies": {
+    "is-generator": "^1.0.3",
     "is-promise": "^2.1.0"
   }
 }

@@ -1,47 +1,44 @@
 Thens 🕺🏻 🕺🏻 🕺🏻
 ==
 
-The instrument to create async functions sequence with single argument, powered by Promise.
+The instrument to create async functions sequence, powered by Promise. It is Promise.`then` in the plural.
 
-With *thens* you do not need to know is asynchronious your function(s) or not, the result always will be async. And you do not need to declare `Promise.resolve`, or `new Promise`, or `async` to start sequence. Call it as simple async function and await result. Or use as handler for another `then`.
+Forget about `Promise.resolve`, or `new Promise`, or `then.then.then` chain. Just compose functions and await result. Or use it as handler for native `then`, or a part of `thens`. And don't forget it **supports [generators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function%2A)**.
+
+Enjoy.
 
 ```js
 import thens from 'thens';
 
 const calc = thens(
-  a => a + 1,
+  // Static
+  a => a + 1, 
+  // Async like
   b => Promise.resolve(b + 1),
+  // Real async
   c => new Promise((resolve) => setTimeout(() => resolve(c + 1))),
+  // Like Promise.all
   [
     d => d + 1,
-    d => Promise.resolve(e + 2),
-    d => new Promise((resolve) => setTimeout(() => resolve(f + 3))),
-  ]
+    d => Promise.resolve(d + 2),
+    d => new Promise((resolve) => setTimeout(() => resolve(d + 3))),
+  ],
+  // Generator, driven by rebound runner
+  function* ([e, f, g]) {
+    // Async inside generator
+    const h = yield Promise.resolve(e + f + g);
+    try {
+      throw new Error('Unexpected error');
+    } catch(e) {
+      // Error handler inside generator
+      return h;
+    }
+  }
 );
 
-calc(0).then(console.log); // [4, 5, 6]
-```
-
-Is equals to:
-
-```js
-const calc = function(props) {
-  return Promise.resolve(props)
-  .then(a => a + 1)
-  .then(b => Promise.resolve(b + 1))
-  .then(c => new Promise(
-    (resolve) => setTimeout(() => resolve(c + 1))
-  ))
-  .then((props) => Promise.all([
-    Promise.resolve(props).then(d => d + 1),
-    Promise.resolve(props).then(d => Promise.resolve(e + 2)),
-    Promise.resolve(props).then(d => new Promise(
-      (resolve) => setTimeout(() => resolve(f + 3))
-    )),
-  ]))
-};
-
-calc(0).then(console.log); // [4, 5, 6]
+calc(0)
+.then(console.log) // 15
+.catch(console.warn); // And don't forget to add final catch
 ```
 
 ## License
