@@ -43,4 +43,4 @@ calc(0)
 
 ## License
 
-MIT, 2017, Vladimir Klamykov <vladimirmorulus@gmail.com>
+MIT, 2017, Vladimir Kalmykov <vladimirmorulus@gmail.com>
