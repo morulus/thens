@@ -7,6 +7,12 @@ Forget about `Promise.resolve`, or `new Promise`, or `then.then.then` chain. Jus
 
 Enjoy.
 
+```shell
+yarn add thens
+```
+
+Usage.
+
 ```js
 import thens from 'thens';
 
