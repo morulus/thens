@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/morulus/flowable.git"
+    "url": "git+https://github.com/morulus/thens.git"
   },
   "keywords": [
     "then",
@@ -26,9 +26,9 @@
   "author": "Vladimir Kalmykov <vladimirmorulus@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/morulus/flowable/issues"
+    "url": "https://github.com/morulus/thens/issues"
   },
-  "homepage": "https://github.com/morulus/flowable#readme",
+  "homepage": "https://github.com/morulus/thens#readme",
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.31",
     "babel-cli": "^6.26.0",
