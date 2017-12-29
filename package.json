@@ -1,6 +1,6 @@
 {
   "name": "thens",
-  "version": "2.0.0-beta",
+  "version": "2.0.0-beta.2",
   "description": "The instrument to create async functions sequence with single argument, powered by Promise",
   "main": "lib/index.js",
   "scripts": {

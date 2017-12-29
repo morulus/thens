@@ -6,7 +6,7 @@
           "targets": {
             "node": ["6.10"]
           },
-          "modules": false,
+          "modules": "commonjs",
           "shippedProposals": true
         }]
       ],
