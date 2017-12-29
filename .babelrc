@@ -1,9 +1,29 @@
 {
-  "presets": [
-    ["env", {
-      "targets": {
-        "node": ["6.0.0"]
-      }
-    }]
-  ]
+  "env": {
+    "production": {
+      "presets": [
+        ["env", {
+          "targets": {
+            "node": ["6.10"]
+          },
+          "modules": false,
+          "shippedProposals": true
+        }]
+      ],
+      "plugins": [
+        "babel-plugin-add-module-exports"
+      ]
+    },
+    "test": {
+      "presets": [
+        ["env", {
+          "targets": {
+            "node": ["6.10"]
+          },
+          "modules": "commonjs",
+          "shippedProposals": true
+        }]
+      ]
+    }
+  }
 }
