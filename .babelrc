@@ -6,8 +6,7 @@
           "targets": {
             "node": ["6.10"]
           },
-          "modules": "commonjs",
-          "shippedProposals": true
+          "modules": "commonjs"
         }]
       ],
       "plugins": [
@@ -20,8 +19,7 @@
           "targets": {
             "node": ["6.10"]
           },
-          "modules": "commonjs",
-          "shippedProposals": true
+          "modules": "commonjs"
         }]
       ]
     }
